@@ -44,7 +44,6 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.InterpolationHandler;
-import net.minecraft.world.entity.LinearInterpolationHandler;
 import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
@@ -343,8 +342,8 @@ public class RealisticBlockEntity extends Entity {
 	}
 
 	@Override
-	protected InterpolationHandler createInterpolationHandler() {
-		return LinearInterpolationHandler.create(this, 1);
+	public @Nullable InterpolationHandler getInterpolation() {
+		return new InterpolationHandler(this, 1);
 	}
 
 	public void startSimulating() {
@@ -950,7 +949,6 @@ public class RealisticBlockEntity extends Entity {
 	public void push(final Entity entity) {
 	}
 
-	@Override
 	public void pushFromExplosion(final Vec3 impulse) {
 		if (!this.level().isClientSide()) {
 			RealisticPhysics.explosion(this, impulse);
