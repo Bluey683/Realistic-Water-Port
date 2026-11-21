@@ -88,7 +88,7 @@ public final class ModContent {
 			.replaceable()
 			.noCollision()
 			.strength(100.0F)
-			.pushReaction(PushReaction.POPPED)
+			.pushReaction(PushReaction.DESTROY)
 			.noLootTable()
 			.liquid()
 			.sound(SoundType.EMPTY)
@@ -116,7 +116,7 @@ public final class ModContent {
 			.replaceable()
 			.noCollision()
 			.strength(100.0F)
-			.pushReaction(PushReaction.POPPED)
+			.pushReaction(PushReaction.DESTROY)
 			.noLootTable()
 			.liquid()
 			.lightLevel(state -> 15)
@@ -141,7 +141,7 @@ public final class ModContent {
 			.replaceable()
 			.noCollision()
 			.strength(100.0F)
-			.pushReaction(PushReaction.POPPED)
+			.pushReaction(PushReaction.DESTROY)
 			.noLootTable()
 			.liquid()
 			.sound(SoundType.EMPTY)
@@ -171,7 +171,7 @@ public final class ModContent {
 			.replaceable()
 			.noCollision()
 			.strength(100.0F)
-			.pushReaction(PushReaction.POPPED)
+			.pushReaction(PushReaction.DESTROY)
 			.noLootTable()
 			.liquid()
 			.sound(SoundType.EMPTY)
@@ -199,7 +199,7 @@ public final class ModContent {
 			.strength(0.5F)
 			.sound(SoundType.SAND)
 			.noOcclusion()
-			.pushReaction(PushReaction.POPPED)
+			.pushReaction(PushReaction.DESTROY)
 			.isSuffocating((state, level, pos) -> false)
 			.isViewBlocking((state, level, pos, box) -> false)
 			.setId(REALISTIC_SAND_KEY)
@@ -216,7 +216,7 @@ public final class ModContent {
 			.strength(0.6F)
 			.sound(SoundType.GRAVEL)
 			.noOcclusion()
-			.pushReaction(PushReaction.POPPED)
+			.pushReaction(PushReaction.DESTROY)
 			.isSuffocating((state, level, pos) -> false)
 			.isViewBlocking((state, level, pos, box) -> false)
 			.setId(REALISTIC_GRAVEL_KEY)
@@ -235,7 +235,7 @@ public final class ModContent {
 			.randomTicks()
 			.strength(0.1F)
 			.sound(SoundType.SNOW)
-			.pushReaction(PushReaction.POPPED)
+			.pushReaction(PushReaction.DESTROY)
 			.isViewBlocking((state, level, pos, box) -> state.getValue(me.skaffy.block.RealisticSnowBlock.LAYERS) >= 8)
 			.setId(REALISTIC_SNOW_KEY)
 	));
@@ -273,7 +273,7 @@ public final class ModContent {
 			.sound(SoundType.AZALEA_LEAVES)
 			.noOcclusion()
 			.ignitedByLava()
-			.pushReaction(PushReaction.POPPED)
+			.pushReaction(PushReaction.DESTROY)
 			.isSuffocating((state, level, pos) -> false)
 			.isViewBlocking((state, level, pos, box) -> false)
 			.setId(REALISTIC_LEAVES_KEY)
@@ -403,7 +403,7 @@ public final class ModContent {
 			.instabreak()
 			.lightLevel(state -> 15)
 			.sound(SoundType.WOOL)
-			.pushReaction(PushReaction.POPPED)
+			.pushReaction(PushReaction.DESTROY)
 			.noLootTable()
 			.setId(REALISTIC_FIRE_KEY)
 	));
@@ -420,7 +420,7 @@ public final class ModContent {
 			.instabreak()
 			.lightLevel(state -> 10)
 			.sound(SoundType.WOOL)
-			.pushReaction(PushReaction.POPPED)
+			.pushReaction(PushReaction.DESTROY)
 			.noLootTable()
 			.setId(REALISTIC_SOUL_FIRE_KEY)
 	));
@@ -525,7 +525,7 @@ public final class ModContent {
 			.strength(0.1F)
 			.sound(SoundType.CANDLE)
 			.lightLevel(CandleBlock.LIGHT_EMISSION)
-			.pushReaction(PushReaction.POPPED)
+			.pushReaction(PushReaction.DESTROY)
 			.setId(blockKey)));
 		REALISTIC_CANDLES.put(vanillaName, block);
 		REALISTIC_CANDLE_ITEMS.put(vanillaName, registerBlockItem(ResourceKey.create(Registries.ITEM, RealisticWater.id("realistic_" + vanillaName)), block));
@@ -537,7 +537,7 @@ public final class ModContent {
 			.instabreak()
 			.lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 7 : 0)
 			.sound(SoundType.WOOD)
-			.pushReaction(PushReaction.POPPED)
+			.pushReaction(PushReaction.DESTROY)
 			.setId(key);
 	}
 
@@ -569,7 +569,7 @@ public final class ModContent {
 			.instabreak()
 			.lightLevel(state -> light)
 			.sound(SoundType.WOOD)
-			.pushReaction(PushReaction.POPPED)
+			.pushReaction(PushReaction.DESTROY)
 			.setId(key);
 	}
 
