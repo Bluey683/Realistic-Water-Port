@@ -63,7 +63,7 @@ public record LiquidEditPayload(int action, CustomLiquid liquid, boolean newSlot
 					return;
 				}
 				ItemStack stack = CustomLiquidBucketItem.stack(known.slot(), known, this.action == INFINITE_BUCKET);
-				player.getInventory().placeItemBackInInventory(stack, net.minecraft.util.Prediction.SERVER_ONLY);
+				player.getInventory().placeItemBackInInventory(stack);
 			}
 			default -> {
 			}
