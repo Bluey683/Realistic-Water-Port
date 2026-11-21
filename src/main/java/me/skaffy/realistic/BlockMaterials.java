@@ -16,7 +16,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jspecify.annotations.Nullable;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.RedstoneWireBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -158,7 +157,7 @@ public final class BlockMaterials {
 
 	public static double @Nullable [][] solidBoxes(BlockState state) {
 		double[][] boxes = SOLID.computeIfAbsent(state, s -> {
-			if (s.getBlock() instanceof RedstoneWireBlock) {
+			if (s.is(Blocks.REDSTONE_WIRE)) {
 				s = s.getBlock().defaultBlockState();
 			}
 			VoxelShape collision = s.getCollisionShape(EmptyBlockGetter.INSTANCE, BlockPos.ZERO);
