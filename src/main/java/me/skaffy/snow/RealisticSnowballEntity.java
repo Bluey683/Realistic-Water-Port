@@ -41,7 +41,7 @@ public class RealisticSnowballEntity extends ThrowableItemProjectile {
 	}
 
 	@Override
-	public void handleEntityEvent(final @EntityEvent.Value byte id) {
+	public void handleEntityEvent(final byte id) {
 		if (id == 3) {
 			for (int i = 0; i < 4; i++) {
 				this.level().addParticle(ParticleTypes.ITEM_SNOWBALL, this.getX(), this.getY(), this.getZ(), 0.0, 0.0, 0.0);
