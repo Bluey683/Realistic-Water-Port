@@ -56,7 +56,7 @@ public record BreakRealisticPayload(int entityId, int x, int y, int z) implement
 			GridInteraction.asGridPlayer(player, e, slot, () -> level.destroyBlock(at, false, player));
 			grid.pull();
 		} else {
-			level.levelEvent(LevelEvent.PARTICLES_AND_SOUND_DESTROY_BLOCK, BlockPos.containing(c.x, c.y, c.z), Block.getId(state));
+			level.levelEvent(LevelEvent.PARTICLES_DESTROY_BLOCK, BlockPos.containing(c.x, c.y, c.z), Block.getId(state));
 			e.removeCell(this.x, this.y, this.z);
 		}
 		if (!player.hasInfiniteMaterials() && state.getBlock().asItem() != net.minecraft.world.item.Items.AIR) {
