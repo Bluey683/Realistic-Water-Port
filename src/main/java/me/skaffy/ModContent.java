@@ -201,7 +201,7 @@ public final class ModContent {
 			.noOcclusion()
 			.pushReaction(PushReaction.DESTROY)
 			.isSuffocating((state, level, pos) -> false)
-			.isViewBlocking((state, level, pos, box) -> false)
+			.isViewBlocking((state, level, pos) -> false)
 			.setId(REALISTIC_SAND_KEY)
 	));
 
@@ -218,7 +218,7 @@ public final class ModContent {
 			.noOcclusion()
 			.pushReaction(PushReaction.DESTROY)
 			.isSuffocating((state, level, pos) -> false)
-			.isViewBlocking((state, level, pos, box) -> false)
+			.isViewBlocking((state, level, pos) -> false)
 			.setId(REALISTIC_GRAVEL_KEY)
 	));
 
@@ -236,7 +236,7 @@ public final class ModContent {
 			.strength(0.1F)
 			.sound(SoundType.SNOW)
 			.pushReaction(PushReaction.DESTROY)
-			.isViewBlocking((state, level, pos, box) -> state.getValue(me.skaffy.block.RealisticSnowBlock.LAYERS) >= 8)
+			.isViewBlocking((state, level, pos) -> state.getValue(me.skaffy.block.RealisticSnowBlock.LAYERS) >= 8)
 			.setId(REALISTIC_SNOW_KEY)
 	));
 
@@ -275,7 +275,7 @@ public final class ModContent {
 			.ignitedByLava()
 			.pushReaction(PushReaction.DESTROY)
 			.isSuffocating((state, level, pos) -> false)
-			.isViewBlocking((state, level, pos, box) -> false)
+			.isViewBlocking((state, level, pos) -> false)
 			.setId(REALISTIC_LEAVES_KEY)
 	));
 
