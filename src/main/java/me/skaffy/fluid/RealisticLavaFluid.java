@@ -76,7 +76,7 @@ public abstract class RealisticLavaFluid extends FlowingFluid {
 						level.setBlockAndUpdate(testPos, BaseFireBlock.getState(level, testPos));
 						return;
 					}
-				} else if (blockState.is(BlockTags.BLOCKS_LAVA_FIRE_SPREAD)) {
+				} else if (blockState.ignitedByLava()) {
 					return;
 				}
 			}
