@@ -69,7 +69,7 @@ public abstract class ServerLevelGridMixin {
 	}
 
 	@Inject(method = "levelEvent", at = @At("HEAD"), cancellable = true)
-	private void realisticWater$moveGridLevelEvent(final @Nullable Entity source, final @LevelEvent.Value int type, final BlockPos pos, final int data,
+	private void realisticWater$moveGridLevelEvent(final @Nullable Entity source, final int type, final BlockPos pos, final int data,
 		final CallbackInfo info) {
 		GridSpace.Found found = GridSpace.find((ServerLevel) (Object) this, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
 		if (found == null) {
