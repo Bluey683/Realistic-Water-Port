@@ -102,6 +102,7 @@ tasks.jar {
 }
 
 tasks.named<Jar>("sourcesJar") {
+	dependsOn(remapClient262)
 	val projectName = project.name
 	inputs.property("projectName", projectName)
 
